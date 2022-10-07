@@ -8,16 +8,6 @@ public class MovementBehaviour : MonoBehaviour
     public float runSpeed;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void MoveForward(bool running)
     {
@@ -29,5 +19,15 @@ public class MovementBehaviour : MonoBehaviour
         {
             transform.position += transform.forward * runSpeed * Time.deltaTime;
         }
+    }
+
+    public void MoveLeft()
+    {
+        transform.position -= transform.right * runSpeed * Time.deltaTime;
+    }
+
+    public void MoveRight()
+    {
+        transform.position += transform.right * runSpeed * Time.deltaTime;
     }
 }

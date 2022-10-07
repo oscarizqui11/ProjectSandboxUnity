@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-
         switch (state)
         {
             case State.IDLE:
@@ -80,6 +79,14 @@ public class PlayerController : MonoBehaviour
                 break;
         }
 
+        if(Input.GetAxisRaw("Horizontal") > 0)
+        {
+            _mov.MoveRight();
+        }
+        else if(Input.GetAxisRaw("Horizontal") < 0)
+        {
+            _mov.MoveLeft();
+        }
         
     }
 }

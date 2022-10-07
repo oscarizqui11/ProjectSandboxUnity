@@ -98,11 +98,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0cc5e7d23b6879a4d8b3644f02cd8430, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0cc5e7d23b6879a4d8b3644f02cd8430, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 493.851
+      value: 494.851
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0cc5e7d23b6879a4d8b3644f02cd8430, type: 3}
       propertyPath: m_LocalPosition.y
@@ -186,7 +186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0cc5e7d23b6879a4d8b3644f02cd8430, type: 3}
       propertyPath: m_Name
-      value: PT_Lowpoly_Medieval_Armors_Female_Moduar_Free_pack (1) Variant
+      value: PT_Lowpoly_Medieval_Armors_Female_Moduar_Free_pack (1)
       objectReference: {fileID: 0}
     - target: {fileID: 921626167257032206, guid: 0cc5e7d23b6879a4d8b3644f02cd8430, type: 3}
       propertyPath: m_IsActive
@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  runSpeed: 1.5
+  runSpeed: 4
 --- !u!114 &2010576412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,24 +318,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56edf7f878eba1d468e6f1ac91f1abe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8743009764601457973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2285255474265971326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f0bcdb2184354c4790b35652fb8e636, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  role: 1
-  scorePoints: 0
-  scoreMultiplier: 1
-  onScored:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &147436147451720653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,3 +331,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activePowerUp: {fileID: 0}
+--- !u!114 &8743009764601457973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2285255474265971326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f0bcdb2184354c4790b35652fb8e636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scorePoints: 0
+  scoreMultiplier: 1
+  onScored:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UIscoreUpdate, Assembly-CSharp
+        m_MethodName: UpdateUIScore
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

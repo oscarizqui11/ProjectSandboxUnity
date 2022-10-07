@@ -32,7 +32,6 @@ public class PowerUpsController : MonoBehaviour
                     activePowerUp = storedPowerUp;
                     storedPowerUp = null;
                 }
-
             }
         }
         else

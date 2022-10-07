@@ -5,15 +5,6 @@ using UnityEngine.Events;
 
 public class ScoreBehaviour : MonoBehaviour
 {
-    public enum Role
-    {
-        COLLECTABLE,
-        PLAYER,
-        UI
-    }
-
-    public Role role;
-
     public int scorePoints;
     public int scoreMultiplier;
 
@@ -38,6 +29,16 @@ public class ScoreBehaviour : MonoBehaviour
     public void SetMultiplier(int newMultiplier)
     {
         scoreMultiplier = newMultiplier; 
+    }
+
+    public void SetScore(int newScore)
+    {
+        scorePoints = newScore;
+    }
+
+    public int GetScore()
+    {
+        return scorePoints;
     }
 
 }

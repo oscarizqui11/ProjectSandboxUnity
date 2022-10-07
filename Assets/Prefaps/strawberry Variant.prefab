@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 4300004, guid: 3f4d2118f6a772542a1635ef5bfa6982, type: 3}
     - target: {fileID: 6373637466405325473, guid: 7ceea0da5c7a2654080ad747cbe45e32, type: 3}
       propertyPath: m_Name
-      value: strawberry Variant
+      value: strawberry
       objectReference: {fileID: 0}
     - target: {fileID: 6374396301087054364, guid: 7ceea0da5c7a2654080ad747cbe45e32, type: 3}
       propertyPath: powerUp
@@ -22,11 +22,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 39ac03d2a0bdfda48ad1c676378c6e90, type: 2}
     - target: {fileID: 6375300660551733209, guid: 7ceea0da5c7a2654080ad747cbe45e32, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 6375300660551733209, guid: 7ceea0da5c7a2654080ad747cbe45e32, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 493.9
+      value: 494.9
       objectReference: {fileID: 0}
     - target: {fileID: 6375300660551733209, guid: 7ceea0da5c7a2654080ad747cbe45e32, type: 3}
       propertyPath: m_LocalPosition.y
@@ -34,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6375300660551733209, guid: 7ceea0da5c7a2654080ad747cbe45e32, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 514.782
+      value: 505.55
       objectReference: {fileID: 0}
     - target: {fileID: 6375300660551733209, guid: 7ceea0da5c7a2654080ad747cbe45e32, type: 3}
       propertyPath: m_LocalRotation.w
