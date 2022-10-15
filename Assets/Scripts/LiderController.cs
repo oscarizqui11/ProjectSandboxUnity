@@ -11,23 +11,22 @@ public struct follower
 
 public class LiderController : MonoBehaviour
 {
-    public const int NUM_FOLLOWERS = 9;
-
     public follower[] followers;
 
     // Start is called before the first frame update
     void Start()
     {
-        followers = new follower[NUM_FOLLOWERS];
 
-        followers[0].pos = new Vector3(0, 0, 0);
-
-        Debug.Log(followers[0].pos);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public Vector3 GetTargetPos()
+    {
+        return followers[0].pos;
     }
 }
