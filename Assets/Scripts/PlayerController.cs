@@ -19,13 +19,13 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        state = State.IDLE;
+        state = State.RUNNING;
         _anim = GetComponentInChildren<Animator>();
         _mov = GetComponent<MovementBehaviour>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         switch (state)
@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
             case State.WALKING:
 
                 _anim.SetInteger("State", 1);
-                _mov.MoveForward(false);
+                PlayerMovement();
 
                 if(!Input.GetKey(KeyCode.W))
                 {
@@ -65,28 +65,34 @@ public class PlayerController : MonoBehaviour
             case State.RUNNING:
 
                 _anim.SetInteger("State", 2);
-                _mov.MoveForward(true);
+                PlayerMovement();
 
-                if (!Input.GetKey(KeyCode.LeftShift))
+                /*if (!Input.GetKey(KeyCode.LeftShift))
                 {
                     state = State.WALKING;
-                }
+                }*/
 
                 break;
 
             default:
                 state = State.IDLE;
                 break;
-        }
+        }        
+    }
 
-        if(Input.GetAxisRaw("Horizontal") > 0)
+    private void PlayerMovement()
+    {
+        if (Input.GetAxisRaw("Horizontal") > 0)
         {
-            _mov.MoveRight();
+            _mov.MoveTowards(transform.right + transform.forward);
         }
-        else if(Input.GetAxisRaw("Horizontal") < 0)
+        else if (Input.GetAxisRaw("Horizontal") < 0)
         {
-            _mov.MoveLeft();
+            _mov.MoveTowards(-transform.right + transform.forward);
         }
-        
+        else
+        {
+            _mov.MoveTowards(transform.forward);
+        }
     }
 }

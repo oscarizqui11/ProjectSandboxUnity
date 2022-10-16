@@ -10,6 +10,7 @@ public class FollowerBehaviour : MonoBehaviour
     private bool isFollowing;
     private Vector3 targetPos;
     private GameObject targetLider;
+    private Vector3 targetDir;
 
     // Start is called before the first frame update
     void Start()
@@ -19,23 +20,30 @@ public class FollowerBehaviour : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(isFollowing)
         {
+            
             if(transform.position.z <= targetLider.transform.position.z - targetPos.z)
             {
-                _mb.MoveForward(false);                
+                targetDir = transform.forward;                
+
+                if (Mathf.Abs(((targetLider.transform.position.x + targetPos.x) - transform.position.x)) > 0.1)
+                {
+                    if (transform.position.x < targetLider.transform.position.x + targetPos.x)
+                    {
+                        targetDir += transform.right;
+                    }
+                    else if (transform.position.x > targetLider.transform.position.x + targetPos.x)
+                    {
+                        targetDir -= transform.right;
+                    }
+                }
             }
 
-            if (transform.position.x < targetLider.transform.position.x + targetPos.x)
-            {
-                _mb.MoveRight();
-            }
-            else if (transform.position.x > targetLider.transform.position.x + targetPos.x)
-            {
-                _mb.MoveLeft();
-            }
+            _mb.MoveTowards(targetDir);
+
         }
     }
 
