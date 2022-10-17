@@ -25,8 +25,34 @@ public class LiderController : MonoBehaviour
         
     }
 
-    public Vector3 GetTargetPos()
+    public Vector3 GetTargetPos(GameObject followerAsking)
     {
-        return followers[0].pos;
+        Vector3 ret = Vector3.zero;
+
+        for (int i = 0; i < followers.Length; i++)
+        {
+            if (followers[i].followerObj == followerAsking)
+            {
+                ret = followers[i].pos;
+                break;
+            }
+        }
+
+        return ret;
+    }
+
+    public void SetFollower(GameObject newFollower)
+    {
+        for(int i = 0; i < followers.Length; i++)
+        {
+            if(followers[i].followerObj == null)
+            {
+                if (followers[i].followerObj != newFollower)
+                {
+                    followers[i].followerObj = newFollower;
+                }
+                break;
+            }
+        }
     }
 }

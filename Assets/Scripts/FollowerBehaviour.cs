@@ -40,10 +40,10 @@ public class FollowerBehaviour : MonoBehaviour
                         targetDir -= transform.right;
                     }
                 }
-            }
 
             _mb.MoveTowards(targetDir);
-
+            
+            }
         }
     }
 
@@ -52,7 +52,8 @@ public class FollowerBehaviour : MonoBehaviour
         isFollowing = true;
         transform.forward = other.transform.forward;
 
-        targetPos = other.GetComponent<LiderController>().GetTargetPos();
+        other.GetComponent<LiderController>().SetFollower(gameObject);
+        targetPos = other.GetComponent<LiderController>().GetTargetPos(gameObject);
         targetLider = other.gameObject;
 
         _anim.SetInteger("State", 2);
