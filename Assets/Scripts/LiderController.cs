@@ -13,16 +13,11 @@ public class LiderController : MonoBehaviour
 {
     public follower[] followers;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    private ScoreBehaviour _score;
 
-    }
-
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        _score = GetComponent<ScoreBehaviour>();
     }
 
     public Vector3 GetTargetPos(GameObject followerAsking)
@@ -43,6 +38,8 @@ public class LiderController : MonoBehaviour
 
     public void SetFollower(GameObject newFollower)
     {
+        FollowerBehaviour followerData = newFollower.GetComponent<FollowerBehaviour>();
+        
         for(int i = 0; i < followers.Length; i++)
         {
             if(followers[i].followerObj == null)
@@ -54,5 +51,7 @@ public class LiderController : MonoBehaviour
                 break;
             }
         }
+
+        _score.SetScore(_score.scorePoints - followerData.pointsCost);        
     }
 }

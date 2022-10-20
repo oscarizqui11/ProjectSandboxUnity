@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FollowerBehaviour : MonoBehaviour
 {
+    public int pointsCost;
+
     private MovementBehaviour _mb;
     private Animator _anim;
 
@@ -49,14 +51,26 @@ public class FollowerBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        isFollowing = true;
-        transform.forward = other.transform.forward;
+        if (other.TryGetComponent<ScoreBehaviour>(out ScoreBehaviour _otherScore))
+        {
+            if(_otherScore.scorePoints >= pointsCost)
+            {
+                //_otherScore.SetScore(_otherScore.scorePoints - pointsCost);
 
-        other.GetComponent<LiderController>().SetFollower(gameObject);
-        targetPos = other.GetComponent<LiderController>().GetTargetPos(gameObject);
-        targetLider = other.gameObject;
+                isFollowing = true;
+                transform.forward = other.transform.forward;
 
-        _anim.SetInteger("State", 2);
+                if (other.TryGetComponent<LiderController>(out LiderController _lider))
+                {
+                    _lider.SetFollower(gameObject);
+                    targetPos = _lider.GetTargetPos(gameObject);
+                }
+
+                targetLider = other.gameObject;
+            }
+
+            _anim.SetInteger("State", 2);
+        }
 
         Debug.Log(targetPos);
     }

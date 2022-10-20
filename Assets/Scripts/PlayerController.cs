@@ -7,11 +7,14 @@ public class PlayerController : MonoBehaviour
     private Animator _anim;
     private MovementBehaviour _mov;
 
+    private bool isMoving;
+
     private enum State
     {
         IDLE,
-        WALKING,
-        RUNNING
+        FORWARD,
+        LEFT,
+        RIGHT
     }
 
     private State state;
@@ -19,78 +22,57 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        state = State.RUNNING;
         _anim = GetComponentInChildren<Animator>();
         _mov = GetComponent<MovementBehaviour>();
+        isMoving = false;
+        state = State.IDLE;
+    }
+
+    private void Update()
+    {
+        if(state == State.IDLE && Input.GetKey(KeyCode.Space))
+        {
+            isMoving = true;
+            _anim.SetInteger("State", 2);
+        }
+
+        if (isMoving)
+        {
+            if (Input.GetAxisRaw("Horizontal") > 0)
+            {
+                state = State.RIGHT;
+            }
+            else if (Input.GetAxisRaw("Horizontal") < 0)
+            {
+                state = State.LEFT;
+            }
+            else
+            {
+                state = State.FORWARD;
+            }
+        }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-
-        switch (state)
+        if(isMoving)
         {
-            case State.IDLE:
-
-                _anim.SetInteger("State", 0);
-
-                if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W))
-                {
-                    state = State.RUNNING;
-                }
-                else if (Input.GetKey(KeyCode.W))
-                {
-                    state = State.WALKING;
-                }
-
-                break;
-
-            case State.WALKING:
-
-                _anim.SetInteger("State", 1);
-                PlayerMovement();
-
-                if(!Input.GetKey(KeyCode.W))
-                {
-                    state = State.IDLE;
-                }
-
-                else if (Input.GetKey(KeyCode.LeftShift))
-                {
-                    state = State.RUNNING;
-                }
-
-                break;
-
-            case State.RUNNING:
-
-                _anim.SetInteger("State", 2);
-                PlayerMovement();
-
-                /*if (!Input.GetKey(KeyCode.LeftShift))
-                {
-                    state = State.WALKING;
-                }*/
-
-                break;
-
-            default:
-                state = State.IDLE;
-                break;
-        }        
+            PlayerMovement();
+        }    
     }
 
     private void PlayerMovement()
     {
-        if (Input.GetAxisRaw("Horizontal") > 0)
+        if (state == State.RIGHT)
         {
             _mov.MoveTowards(transform.right + transform.forward);
         }
-        else if (Input.GetAxisRaw("Horizontal") < 0)
+        else if (state == State.LEFT)
         {
             _mov.MoveTowards(-transform.right + transform.forward);
         }
-        else
+        else if (state == State.FORWARD)
         {
             _mov.MoveTowards(transform.forward);
         }

@@ -34,6 +34,8 @@ public class ScoreBehaviour : MonoBehaviour
     public void SetScore(int newScore)
     {
         scorePoints = newScore;
+
+        onScored.Invoke(scorePoints);
     }
 
     public int GetScore()
