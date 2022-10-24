@@ -21,8 +21,8 @@ public class ChangeTextDarkness : MonoBehaviour
     public void SetTextDarkness(bool pressed)
     {
         if(pressed)
-            _tmProUGUI.faceColor = new Color32(pressedColor.r, pressedColor.g, pressedColor.b, pressedColor.a);
+            _tmProUGUI.faceColor = pressedColor;
         else
-            _tmProUGUI.faceColor = new Color32(originalColor.r, originalColor.g, originalColor.b, originalColor.a);
+            _tmProUGUI.faceColor = originalColor;
     }
 }
