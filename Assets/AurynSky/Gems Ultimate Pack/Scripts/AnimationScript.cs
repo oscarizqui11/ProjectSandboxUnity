@@ -35,7 +35,7 @@ public class AnimationScript : MonoBehaviour {
 
        
         
-        if(isAnimated)
+        if(isAnimated && Time.timeScale != 0)
         {
             if(isRotating)
             {
@@ -63,7 +63,7 @@ public class AnimationScript : MonoBehaviour {
                 }
             }
 
-            if(isScaling)
+            if(isScaling && Time.timeScale != 0)
             {
                 scaleTimer += Time.deltaTime;
 

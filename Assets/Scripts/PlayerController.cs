@@ -31,11 +31,11 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKey(KeyCode.Escape))
+        /*if(Input.GetKey(KeyCode.Escape))
         {
             GameManager.SetNextScene(1);
             SceneManager.LoadScene(0);
-        }
+        }*/
 
         if(state == State.IDLE && Input.GetKey(KeyCode.Space))
         {
