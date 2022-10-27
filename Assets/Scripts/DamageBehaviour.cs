@@ -13,5 +13,4 @@ public class DamageBehaviour : MonoBehaviour
             otherHealth.Hurt(damage);
         }
     }
-
 }

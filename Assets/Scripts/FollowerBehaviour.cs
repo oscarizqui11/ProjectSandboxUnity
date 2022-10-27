@@ -71,7 +71,5 @@ public class FollowerBehaviour : MonoBehaviour
 
             _anim.SetInteger("State", 2);
         }
-
-        Debug.Log(targetPos);
     }
 }

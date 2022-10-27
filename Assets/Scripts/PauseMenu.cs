@@ -12,7 +12,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !GameOver.Instance.IsGameOver())
         {
             if (gameIsPaused)
             {
@@ -24,6 +24,14 @@ public class PauseMenu : MonoBehaviour
             }
         }
     }
+    public void Pause()
+    {
+        pauseMenuUI.SetActive(true);
+        gameCanvasUI.SetActive(false);
+        Time.timeScale = 0.0f;
+        gameIsPaused = true;
+        //_mainMusic.spatialBlend = 0.86f;
+    }
 
     public void Resume()
     {
@@ -34,14 +42,6 @@ public class PauseMenu : MonoBehaviour
         //_mainMusic.spatialBlend = 0;
     }
 
-    void Pause()
-    {
-        pauseMenuUI.SetActive(true);
-        gameCanvasUI.SetActive(false);
-        Time.timeScale = 0.0f;
-        gameIsPaused = true;
-        //_mainMusic.spatialBlend = 0.86f;
-    }
 
     public void QuitGame()
     {

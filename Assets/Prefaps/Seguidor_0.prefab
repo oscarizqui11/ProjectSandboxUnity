@@ -187,7 +187,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.42260742, y: 1.1497148, z: 0.29370117}
   m_Center: {x: 0.0064697266, y: 0.92622846, z: -0.0289917}
---- !u!114 &481208973
+--- !u!114 &1090104207
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -196,10 +196,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 2285255474265971326}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4e974b51ecf0cb408fcb582f1ef513b, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a77519e088c6b7469bcb45a85c55cc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+--- !u!114 &1090104208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2285255474265971326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a43dd3e098223a947bc5bdf23234aad6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  onDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1090104207}
+        m_TargetAssemblyTypeName: DestroyBehaviour, Assembly-CSharp
+        m_MethodName: DestroyObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1620622110
 MonoBehaviour:
   m_ObjectHideFlags: 0
