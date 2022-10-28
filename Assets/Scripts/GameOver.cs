@@ -46,6 +46,11 @@ public class GameOver : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void SetGameOver(bool gOver)
+    {
+        isGameOver = gOver;
+    }
+
     public bool IsGameOver()
     {
         return isGameOver;

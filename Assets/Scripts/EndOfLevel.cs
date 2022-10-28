@@ -10,6 +10,8 @@ public class EndOfLevel : MonoBehaviour
 
     private int levelPunctuation;
 
+    public IntEvent onEndOfLevel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +53,8 @@ public class EndOfLevel : MonoBehaviour
                 Debug.Log("YOU WIN 3 STARS!!!");
                 levelPunctuation = 3;
             }
+
+            onEndOfLevel.Invoke(levelPunctuation);
         }
     }
 
