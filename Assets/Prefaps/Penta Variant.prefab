@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000010646675420, guid: 1a73058088a4b204bb3a13aff5c48489, type: 3}
       propertyPath: m_Name
-      value: Penta (2)
+      value: Penta (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4000010806421500, guid: 1a73058088a4b204bb3a13aff5c48489, type: 3}
       propertyPath: m_RootOrder
@@ -38,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010806421500, guid: 1a73058088a4b204bb3a13aff5c48489, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -616.30994
+      value: -614.7699
       objectReference: {fileID: 0}
     - target: {fileID: 4000010806421500, guid: 1a73058088a4b204bb3a13aff5c48489, type: 3}
       propertyPath: m_LocalRotation.w
@@ -149,6 +149,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1814016982}
+        m_TargetAssemblyTypeName: PlaySFXOnDie, Assembly-CSharp
+        m_MethodName: PlaySoundFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1389474226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,3 +173,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a77519e088c6b7469bcb45a85c55cc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1814016982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223083562906457952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1dfeaf3f973c7845865bb22fac356da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxName: CollectGemSFX

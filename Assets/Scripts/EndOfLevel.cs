@@ -31,26 +31,21 @@ public class EndOfLevel : MonoBehaviour
                     numFollowers++;
                 }
             }
-            Debug.Log("Seguidores: " + numFollowers);
 
             if(numFollowers < oneStarMin)
             {
-                Debug.Log("YOU LOST!");
                 levelPunctuation = 0;
             }
             else if(numFollowers < twoStarsMin)
             {
-                Debug.Log("YOU WIN 1 STAR!");
                 levelPunctuation = 1;
             }
             else if(numFollowers < threeStarsMin)
             {
-                Debug.Log("YOU WIN 2 STARS!!");
                 levelPunctuation = 2;
             }
             else
             {
-                Debug.Log("YOU WIN 3 STARS!!!");
                 levelPunctuation = 3;
             }
 

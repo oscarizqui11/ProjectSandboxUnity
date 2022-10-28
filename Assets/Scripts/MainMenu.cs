@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadScene(int sceneName)
     {
+        SoundManager.Instance.ResetSound();
         GameManager.SetNextScene(sceneName);
         SceneManager.LoadScene(0);
     }
