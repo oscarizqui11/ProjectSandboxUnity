@@ -5,10 +5,12 @@ using UnityEngine;
 public class BackGroundMusic : MonoBehaviour
 {
     public string musicName;
+    public bool isLoop;
 
     // Start is called before the first frame update
     void Start()
     {
-        SoundManager.Instance.Play(musicName, true);
+        SoundManager.Instance.ResetSound();
+        SoundManager.Instance.Play(musicName, isLoop);
     }
 }

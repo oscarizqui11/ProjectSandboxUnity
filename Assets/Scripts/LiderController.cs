@@ -52,6 +52,6 @@ public class LiderController : MonoBehaviour
             }
         }
 
-        _score.SetScore(_score.scorePoints - followerData.pointsCost);        
+        //_score.SetScore(_score.scorePoints - followerData.pointsCost);        
     }
 }

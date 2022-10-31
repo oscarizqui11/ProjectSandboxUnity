@@ -15,7 +15,7 @@ public class FollowerBehaviour : MonoBehaviour
     private Vector3 targetDir;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _mb = GetComponent<MovementBehaviour>();
         _anim = GetComponent<Animator>();
@@ -51,25 +51,29 @@ public class FollowerBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent<ScoreBehaviour>(out ScoreBehaviour _otherScore))
+        if (!isFollowing && other.TryGetComponent<ScoreBehaviour>(out ScoreBehaviour _otherScore))
         {
             if(_otherScore.scorePoints >= pointsCost)
             {
-                //_otherScore.SetScore(_otherScore.scorePoints - pointsCost);
-
-                isFollowing = true;
-                transform.forward = other.transform.forward;
+                _otherScore.SetScore(_otherScore.scorePoints - pointsCost);
 
                 if (other.TryGetComponent<LiderController>(out LiderController _lider))
                 {
-                    _lider.SetFollower(gameObject);
-                    targetPos = _lider.GetTargetPos(gameObject);
+                    StartFollowing(_lider);                    
                 }
-
-                targetLider = other.gameObject;
             }
-
-            _anim.SetInteger("State", 2);
         }
+    }
+
+    public void StartFollowing(LiderController newLider)
+    {
+        isFollowing = true;
+        transform.forward = newLider.transform.forward;
+        newLider.SetFollower(gameObject);
+        targetPos = newLider.GetTargetPos(gameObject);
+
+        targetLider = newLider.gameObject;
+
+        _anim.SetInteger("State", 2);
     }
 }
