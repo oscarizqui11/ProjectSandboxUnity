@@ -13,4 +13,12 @@ public class DamageBehaviour : MonoBehaviour
             otherHealth.Hurt(damage);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.TryGetComponent<HealthBehaviour>(out HealthBehaviour otherHealth))
+        {
+            otherHealth.Hurt(damage);
+        }
+    }
 }

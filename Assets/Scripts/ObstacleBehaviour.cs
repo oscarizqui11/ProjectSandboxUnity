@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class ObstacleBehaviour : MonoBehaviour
 {
+    protected bool isActive;
 
-
-    private void OnCollisionEnter(Collision collision)
+    private void Start()
     {
-        collision.gameObject.SetActive(false);
+        isActive = false;
     }
 
+    public void StartBehaviour()
+    {
+        isActive = true;
+    }
 }
