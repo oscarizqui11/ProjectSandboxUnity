@@ -54,4 +54,16 @@ public class LiderController : MonoBehaviour
 
         //_score.SetScore(_score.scorePoints - followerData.pointsCost);        
     }
+
+    public void FreeFollowerSlot(GameObject follower)
+    {
+        for (int i = 0; i < followers.Length; i++)
+        {
+            if (followers[i].followerObj == follower)
+            {
+                followers[i].followerObj = null;
+                break;
+            }
+        }
+    }
 }

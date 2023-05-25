@@ -76,4 +76,10 @@ public class FollowerBehaviour : MonoBehaviour
 
         _anim.SetInteger("State", 2);
     }
+
+    public void StopFollowing()
+    {
+        isFollowing = false;
+        targetLider.GetComponent<LiderController>().FreeFollowerSlot(gameObject);
+    }
 }
