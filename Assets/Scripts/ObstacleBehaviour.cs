@@ -8,7 +8,7 @@ public class ObstacleBehaviour : MonoBehaviour
 
     private void Start()
     {
-        isActive = false;
+        enabled = false;
     }
 
     public void StartBehaviour()

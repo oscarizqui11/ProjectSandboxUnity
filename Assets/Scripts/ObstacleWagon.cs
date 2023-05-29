@@ -14,13 +14,12 @@ public class ObstacleWagon : ObstacleBehaviour
         _mb = GetComponent<MovementBehaviour>();
         direction = finishPoint.position - transform.position;
         direction = direction.normalized;
+
+        enabled = false;
     }
 
     private void FixedUpdate()
     {
-        if(isActive)
-        {
-            _mb.MoveTowards(direction);
-        }
+        _mb.MoveTowards(direction);
     }
 }

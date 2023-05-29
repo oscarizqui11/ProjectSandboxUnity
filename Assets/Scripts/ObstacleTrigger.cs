@@ -13,7 +13,7 @@ public class ObstacleTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        _obstacle.StartBehaviour();
+        _obstacle.enabled = true;
 
         if(_obstacle.TryGetComponent<Animator>(out Animator _anim))
         {

@@ -30,7 +30,7 @@ Transform:
   m_Children:
   - {fileID: 2668194571012856457}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3601296135555865165
 PrefabInstance:
@@ -51,6 +51,10 @@ PrefabInstance:
     - target: {fileID: 2010576418, guid: a3e1c3996fc3bee40a52d034c6329b0d, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
       value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 1221048032598329171, guid: a3e1c3996fc3bee40a52d034c6329b0d, type: 3}
+      propertyPath: m_TagString
+      value: Chest
       objectReference: {fileID: 0}
     - target: {fileID: 1512377223516225732, guid: a3e1c3996fc3bee40a52d034c6329b0d, type: 3}
       propertyPath: m_RootOrder
@@ -1290,6 +1294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 8351776009093447923}
+  ragdoll: 0
 --- !u!1 &4079137943539692080 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 677331709037602941, guid: a3e1c3996fc3bee40a52d034c6329b0d, type: 3}
