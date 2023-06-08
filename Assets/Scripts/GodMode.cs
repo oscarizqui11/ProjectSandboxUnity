@@ -96,7 +96,7 @@ public class GodMode : MonoBehaviour
             if(_liderPlayer.followers[i].followerObj == null)
             {
                 GameObject newFollower = Instantiate(followerInstance, _liderPlayer.transform.position + _liderPlayer.followers[i].pos, Quaternion.identity);
-                newFollower.GetComponent<FollowerBehaviour>().StartFollowing(_liderPlayer);
+                newFollower.GetComponentInChildren<FollowerBehaviour>().StartFollowing(_liderPlayer);
                 break;
             }
         }
