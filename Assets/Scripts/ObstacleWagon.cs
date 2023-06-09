@@ -20,6 +20,7 @@ public class ObstacleWagon : ObstacleBehaviour
 
     private void FixedUpdate()
     {
-        _mb.MoveTowards(direction);
+        if(Vector3.Distance(transform.position, finishPoint.position) > 0.5f)
+            _mb.MoveTowards(direction);
     }
 }

@@ -131,7 +131,7 @@ Transform:
   - {fileID: 7933900643934516134}
   - {fileID: 7923632909745889609}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4718611570916931987
 GameObject:
@@ -14868,6 +14868,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: b899b109968a14f4797d7cd111cb647b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4925974520456327112}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: b899b109968a14f4797d7cd111cb647b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5375216905374997535}
   m_SourcePrefab: {fileID: 100100000, guid: b899b109968a14f4797d7cd111cb647b, type: 3}
 --- !u!1 &7933900643934285702 stripped
 GameObject:
@@ -14910,6 +14913,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 11786332186476905}
+--- !u!114 &5375216905374997535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7933900643934285702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1dfeaf3f973c7845865bb22fac356da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxName: Explosion
 --- !u!4 &7933900643934516134 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b899b109968a14f4797d7cd111cb647b, type: 3}
